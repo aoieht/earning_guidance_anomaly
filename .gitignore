@@ -1,4 +1,4 @@
 *.pdf
 .idea/
 __pycache__/
-
+event_illiquidity/illiq_raw.xlsx
