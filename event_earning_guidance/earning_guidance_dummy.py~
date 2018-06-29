@@ -1,0 +1,11 @@
+
+import pandas as pd
+import numpy as np
+from numpy.linalg import inv
+from datetime import timedelta
+
+event_path = '../raw_data/event_sample.xlsx'
+earning_guidance_path = ['../raw_data/historical_earning_guidance/']
+
+event_sample = pd.read_excel(event_path)
+event_sample = event_sample.set_index(event_sample['股票代码'].map(str)+'@'+event_sample['会计年度'])
