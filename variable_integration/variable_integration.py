@@ -3,7 +3,7 @@
 """
 Created on Sun Jul  1 15:58:13 2018
 
-@author: aoieht
+@author: shujian
 """
 
 import pandas as pd
@@ -39,6 +39,14 @@ earning_surprise = pd.read_excel(earning_surprise_path)
 earning_guidance = pd.read_excel(earning_guidance_path)
 
 reg_data = pd.DataFrame(data=None,index=event_sample.index)
-reg_data = pd.concat([reg_data,abnormal_return['CAR_[-5,-1]'],earning_forecast_type,idio_risk,illiq,momentum,lnmv,earning_surprise,shortable,earning_guidance,year,industry],axis=1)
+reg_data = pd.concat([reg_data,
+                      abnormal_return['CAR_[-5,-1]'],
+                      earning_forecast_type,idio_risk,
+                      illiq,momentum,
+                      lnmv,
+                      earning_surprise,
+                      shortable,
+                      earning_guidance,
+                      year,industry],axis=1)
 
 reg_data.to_excel('regression data.xlsx')
